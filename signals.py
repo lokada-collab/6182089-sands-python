@@ -1,4 +1,6 @@
 import numpy as np
+import matplotlib.pyplot as plt
+
 
 def generate_sine_wave(frequency, duration, sample_rate, amplitude):
     t = np.linspace(0, duration, sample_rate * duration, endpoint=False)
@@ -17,7 +19,8 @@ def generate_sine_wave(frequency, duration, sample_rate, amplitude):
 
 def generate_square_wave(frequency, duration, sample_rate, amplitude):
     t = np.linspace(0, duration, sample_rate * duration, endpoint=False)
-    y = amplitude * signal.square(2 * np.pi * frequency * t)
+    # y = amplitude * signals.square(2 * np.pi * frequency * t). --> Code didn't work using SciPy so I use alternative code below that doesnt require SciPy.
+    y = amplitude * np.where(np.sin(2 * np.pi * frequency * t) >= 0, 1, -1)
     return t,y
 
     # singal.square: generates a periodic square-wave waveform
