@@ -33,3 +33,8 @@ amplitude = 1
 
 t2, wave2 = generate_square_wave(frequency, duration, sample_rate, amplitude)
 
+plt.plot(t2,wave2)
+plt.title("Square Wave")
+plt.xlabel("Time(s)")
+plt.ylabel("Amplitude")
+plt.show()
