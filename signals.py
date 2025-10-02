@@ -34,3 +34,8 @@ def time_shift(t, y, shift_by):
     shifted = t + shift_by
     return shifted, y
 
+# Time-scaling
+def time_scale(t, y, scale_by):
+    scaled = t * scale_by
+    scaled_y = np.interp(scaled, t, y)
+    return scaled, scaled_y
