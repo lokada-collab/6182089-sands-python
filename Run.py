@@ -48,3 +48,6 @@ plt.title("Time-Shifted Sine Wave")
 plt.xlabel("Time(s)")
 plt.ylabel("Amplitude")
 plt.show()
+
+
+t_scaled, sq_scaled = time_scale(t, wave2, 0.5)
