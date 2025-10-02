@@ -42,3 +42,9 @@ plt.show()
 
 # Operation
 t_shifted, sine_shifted = time_shift(t, wave, 0.5)
+
+plt.plot(t_shifted, sine_shifted)
+plt.title("Time-Shifted Sine Wave")
+plt.xlabel("Time(s)")
+plt.ylabel("Amplitude")
+plt.show()
