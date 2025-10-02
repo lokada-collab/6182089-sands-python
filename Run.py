@@ -40,7 +40,9 @@ plt.ylabel("Amplitude")
 plt.show()
 
 
-# Operation
+# Operations:
+
+# Time-Shifting
 t_shifted, sine_shifted = time_shift(t, wave, 0.5)
 
 plt.plot(t_shifted, sine_shifted)
@@ -49,7 +51,7 @@ plt.xlabel("Time(s)")
 plt.ylabel("Amplitude")
 plt.show()
 
-
+# Time-Scaling
 t_scaled, sq_scaled = time_scale(t, wave2, 0.5)
 
 plt.plot(t_scaled, sq_scaled)
