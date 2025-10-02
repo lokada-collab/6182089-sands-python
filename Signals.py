@@ -4,7 +4,6 @@ def generate_sine_wave(frequency, duration, sample_rate, amplitude):
     t = np.linspace(0, duration, sample_rate * duration, endpoint=False)
     y = amplitude * np.sin(2 * np.pi * frequency * t)
 
-
     # t: time axis
     # def: defines a function
     # (0, duration: from 0 second to duration second
@@ -20,6 +19,5 @@ def generate_sine_wave(frequency, duration, sample_rate, amplitude):
     y = amplitude * signal.square(2 * np.pi * frequency * t)
     return t,y
 
-
-
-
+    # singal.square: generates a periodic square-wave waveform
+    # 2 * np.pi * frequency * t: converts t into radians
