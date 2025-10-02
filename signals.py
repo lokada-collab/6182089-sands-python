@@ -25,3 +25,12 @@ def generate_square_wave(frequency, duration, sample_rate, amplitude):
 
     # singal.square: generates a periodic square-wave waveform
     # 2 * np.pi * frequency * t: converts t into radians
+
+
+# Operations:
+
+# Time-shifting
+def time_shift(t, y, shift_by):
+    shifted = t + shift_by
+    return shifted, y
+
