@@ -15,3 +15,9 @@ t, wave = generate_sine_wave(frequency, duration, sample_rate, amplitude)
 
 # array of time values and sine values
 # sample_rate: controls the smoothness of the graph
+
+plt.plot(t,wave)
+plt.title("Sine Wave")
+plt.xlabel("Time(s)")
+plt.ylabel("Amplitude")
+plt.show()
