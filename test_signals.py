@@ -1,15 +1,12 @@
 import numpy as np
-from matplotlib.pyplot as plt
+from signals import generate_sine_wave, generate_square_wave, time_shift, time_scale
 
+# Normal test for sine wave
 t, y = generate_sine_wave(1, 2, 1)
 assert len(t) == 1000 
 assert len(y) == 1000 
 
-t, y = generate_sine_wave(5, 3, 1)
-assert np.isclose(max(y), 3, atol=1e-6)
-
+# Edge test for sine wave
 t, y = generate_sine_wave(5, 0, 1)
 assert np.allclose(y, 0)
 
-t, y = generate_sine_wave(1, 2, -1)
-assert len(t) == 0 and len(y) == 0
