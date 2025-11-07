@@ -18,3 +18,14 @@ assert set(np.unique(y)) == {-3, 3}
 # Edge test for square wave
 t, y = generate_square_wave(2, 1, 100, 0)
 assert np.allclose(y, 0)
+
+# Normal test for time shift
+t, y = generate_sine_wave(2, 1, 100, 1)
+t_shift, y_shift = time_shift(t, y, 0.5)
+assert np.array_equal(y_shift, y) 
+assert np.allclose(t_shift, t + 0.5)  
+
+# Edge test for time shift
+t_shift, y_shift = time_shift(t, y, 0)
+assert np.array_equal(t_shift, t)
+assert np.array_equal(y_shift, y)
