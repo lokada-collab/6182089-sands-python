@@ -3,6 +3,22 @@ import matplotlib.pyplot as plt
 
 
 def generate_sine_wave(frequency, duration, sample_rate, amplitude):
+
+  """
+    Generate a discrete-time sine wave.
+
+    Parameters:
+        frequency (float): Frequency of the sine wave in Hz.
+        duration: Length of the signal in seconds.
+        sample_rate: Number of samples per second (Hz).
+        amplitude (float): Amplitude of the sine wave.
+
+    Returns:
+        tuple: (t, y)
+            t (numpy.ndarray): Time axis from 0 to duration (exclusive).
+            y (numpy.ndarray): Sine wave values corresponding to t.
+    """
+
     t = np.linspace(0, duration, sample_rate * duration, endpoint=False)
     y = amplitude * np.sin(2 * np.pi * frequency * t)
     return t,y
