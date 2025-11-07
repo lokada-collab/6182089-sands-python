@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "signal-generator"
+version = "0.1.0"
+description = "Generates sine and square waves, applies time shift and scaling, and plots them"
+authors = [
+    { name = "Lisa Okada", email = "lokada@studelft.nl" }
+]
+dependencies = ["numpy", "matplotlib"]
+
+[tool.setuptools]
+py-modules = ["signals"]
