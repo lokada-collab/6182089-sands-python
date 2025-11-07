@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 def generate_sine_wave(frequency, duration, sample_rate, amplitude):
 
-  """
+    """
     Generate a discrete-time sine wave.
 
     Parameters:
@@ -35,7 +35,7 @@ def generate_sine_wave(frequency, duration, sample_rate, amplitude):
 
 def generate_square_wave(frequency, duration, sample_rate, amplitude):
 
-   """
+    """
     Generate a discrete-time square wave.
 
     Parameters:
@@ -64,7 +64,7 @@ def generate_square_wave(frequency, duration, sample_rate, amplitude):
 # Time-shifting
 def time_shift(t, y, shift_by):
 
- """
+    """
     Shift a signal in time.
 
     Parameters:
@@ -103,3 +103,4 @@ def time_scale(t, y, scale_by):
     scaled = t * scale_by
     scaled_y = np.interp(scaled, t, y)
     return scaled, scaled_y
+
