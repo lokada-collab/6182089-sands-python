@@ -36,6 +36,7 @@ def test_time_shift():
 
 def test_time_scale():
     # Normal test for time scale
+    t, y = generate_sine_wave(2, 1, 100, 1)
     t_scaled, y_scaled = time_scale(t, y, 0.5)
     assert len(t_scaled) == len(y_scaled)
     assert np.allclose(t_scaled, t * 0.5)
