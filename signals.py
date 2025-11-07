@@ -63,6 +63,22 @@ def generate_square_wave(frequency, duration, sample_rate, amplitude):
 
 # Time-shifting
 def time_shift(t, y, shift_by):
+
+ """
+    Shift a signal in time.
+
+    Parameters:
+        t (numpy.ndarray): Original time axis.
+        y (numpy.ndarray): Signal samples.
+        shift_by (float): Amount of shift to apply. 
+                          Positive = shift right, negative = shift left.
+
+    Returns:
+        tuple: (shifted_t, shifted_y)
+            shifted_t (numpy.ndarray): Time axis shifted by 'shift_by'.
+            shifted_y (numpy.ndarray): Original signal values.
+    """
+    
     shifted = t + shift_by
     return shifted, y
 
