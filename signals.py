@@ -84,6 +84,22 @@ def time_shift(t, y, shift_by):
 
 # Time-scaling
 def time_scale(t, y, scale_by):
+
+    """
+    Scale (compressing or stretching) the signal in time.
+
+    Parameters:
+        t (numpy.ndarray): Original time axis.
+        y (numpy.ndarray): Signal samples.
+        scale_by (float): Time scaling factor.
+                          <1 = compress (faster), >1 = stretch (slower).
+
+    Returns:
+        tuple: (scaled_t, scaled_y)
+            scaled_t (numpy.ndarray): Time axis scaled by 'scale_by'.
+            scaled_y (numpy.ndarray): Insert signal at scaled_t.
+    """
+    
     scaled = t * scale_by
     scaled_y = np.interp(scaled, t, y)
     return scaled, scaled_y
