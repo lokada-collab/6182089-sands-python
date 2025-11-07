@@ -7,3 +7,6 @@ assert len(y) == 1000
 
 t, y = generate_sine_wave(5, 3, 1)
 assert np.isclose(max(y), 3, atol=1e-6)
+
+t, y = generate_sine_wave(5, 0, 1)
+assert np.allclose(y, 0)
