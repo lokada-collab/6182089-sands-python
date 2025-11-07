@@ -29,3 +29,13 @@ assert np.allclose(t_shift, t + 0.5)
 t_shift, y_shift = time_shift(t, y, 0)
 assert np.array_equal(t_shift, t)
 assert np.array_equal(y_shift, y)
+
+# Normal test for time scale
+t_scaled, y_scaled = time_scale(t, y, 0.5)  # compress
+assert len(t_scaled) == len(y_scaled)
+assert np.allclose(t_scaled, t * 0.5)
+
+# Edge test for time scale
+t_scaled, y_scaled = time_scale(t, y, 1)
+assert np.array_equal(t_scaled, t)
+assert np.allclose(y_scaled, y)
