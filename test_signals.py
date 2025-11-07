@@ -10,3 +10,11 @@ assert len(y) == 1000
 t, y = generate_sine_wave(5, 0, 1)
 assert np.allclose(y, 0)
 
+# Normal test for square wave
+t, y = generate_square_wave(2, 1, 100, 3)
+assert len(t) == len(y)
+assert set(np.unique(y)) == {-3, 3}
+
+# Edge test for square wave
+t, y = generate_square_wave(2, 1, 100, 0)
+assert np.allclose(y, 0)
