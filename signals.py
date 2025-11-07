@@ -34,6 +34,22 @@ def generate_sine_wave(frequency, duration, sample_rate, amplitude):
     # 2 * np.pi * frequency * t: 2pif --> ANGULAR FREQUENCY!!   
 
 def generate_square_wave(frequency, duration, sample_rate, amplitude):
+
+   """
+    Generate a discrete-time square wave.
+
+    Parameters:
+        frequency (float): Frequency of the square wave in Hz.
+        duration: Length of the signal in seconds.
+        sample_rate: Number of samples per second (Hz).
+        amplitude (float): Peak amplitude of the square wave.
+
+    Returns:
+        tuple: (t, y)
+            t (numpy.ndarray): Time axis from 0 to duration.
+            y (numpy.ndarray): Square wave values (amplitude).
+    """
+
     t = np.linspace(0, duration, sample_rate * duration, endpoint=False)
     # y = amplitude * signals.square(2 * np.pi * frequency * t). --> Code didn't work using SciPy so I use alternative code below that doesnt require SciPy.
     y = amplitude * np.where(np.sin(2 * np.pi * frequency * t) >= 0, 1, -1)
